@@ -2,13 +2,13 @@
 
 namespace LVR\CountryCode;
 
-use Illuminate\Contracts\Validation\Rule;
 use League\ISO3166\Exception\DomainException;
 use League\ISO3166\Exception\InvalidArgumentException;
 use League\ISO3166\Exception\OutOfBoundsException;
 use League\ISO3166\ISO3166;
+use LVR\CountryCode\Support\CountryCodeRule;
 
-class Two implements Rule
+class Two extends CountryCodeRule
 {
 
     /**

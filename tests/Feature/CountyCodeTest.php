@@ -29,8 +29,7 @@ class CountyCodeTest extends TestCase
         return Validator::make(['country' => $country], ['country' => ['required', new Three]]);
     }
 
-    /** @test */
-    public function check_two_digit_codes()
+    public function test_check_two_digit_codes()
     {
         $this->assertTrue($this->two('GB')->passes());
         $this->assertTrue($this->two('de')->passes());
@@ -40,8 +39,7 @@ class CountyCodeTest extends TestCase
         $this->assertTrue($this->two(1)->fails());
     }
 
-    /** @test */
-    public function check_three_digit_codes()
+    public function test_check_three_digit_codes()
     {
         $this->assertTrue($this->three('GBR')->passes());
         $this->assertTrue($this->three('usa')->passes());
